@@ -1,0 +1,6 @@
+framework module Pods_Coreanimation {
+  umbrella header "Pods-Coreanimation-umbrella.h"
+
+  export *
+  module * { export * }
+}
