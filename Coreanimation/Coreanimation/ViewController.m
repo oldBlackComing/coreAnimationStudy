@@ -195,6 +195,147 @@
      **/
     
     [self fuwenben];
+    
+    /**
+     *周佳兴
+     *热区 这个东西 相信很多人用不到 所以 也就 暂时 这个 原理就是 通过 self.view 获取点击时间的 位置 来判断 点击的 地方是否在 你需要的图层上
+     */
+    
+    
+    /**
+     *周佳兴
+     * CAShapeLayer 划线
+     */
+    
+    [self CAShapeLayer:blueLayer];
+    
+    /**
+     *周佳兴
+     *单独的圆角
+     */
+    
+    [self radio];
+    
+    /**
+     * CATransformLayer 用这个来 做相当于 正方体的 变换 区别是什么呢  区别是 可以当做 一个整体 来做动作 而并不是 单个 是 视图
+     */
+    
+    [self catransformLayer];
+}
+
+
+-(void)catransformLayer{
+
+    NSArray *arr = [_containerView.layer sublayers];
+    NSLog(@"%lu", (unsigned long)arr.count);
+    for (CALayer *layer in arr) {
+//        [layer removeFromSuperlayer];
+        
+        layer.hidden = YES;
+        NSLog(@"1111");
+    }
+    
+    CATransform3D ct1 = CATransform3DIdentity;
+    ct1 = CATransform3DTranslate(ct1, -100, 0, 0);
+    
+    CALayer *cube1 = [self cubeWithTransform:ct1];
+    
+      [self.containerView.layer addSublayer:cube1];
+
+}
+
+- (CALayer *)faceWithTransform:(CATransform3D)transform{
+
+    //create cube face layer
+    CALayer *face = [CALayer layer];
+    face.frame = CGRectMake(-50, -50, 100, 100);
+    //apply a random color
+    CGFloat red = (rand() / (double)INT_MAX);
+    CGFloat green = (rand() / (double)INT_MAX);
+    CGFloat blue = (rand() / (double)INT_MAX);
+    face.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1].CGColor;
+    
+    face.transform = transform; return face;
+
+}
+
+- (CALayer *)cubeWithTransform:(CATransform3D)transform{
+    //create cube layer
+    CATransformLayer *cube = [CATransformLayer layer];
+    //add cube face 1
+    CATransform3D ct = CATransform3DMakeTranslation(0, 0, 50);
+    [cube addSublayer:[self faceWithTransform:ct]];
+    //add cube face 2
+    ct = CATransform3DMakeTranslation(50, 0, 0);
+    ct = CATransform3DRotate(ct, M_PI_2, 0, 1, 0);
+    [cube addSublayer:[self faceWithTransform:ct]];
+    
+    //add cube face 3
+    ct = CATransform3DMakeTranslation(0, -50, 0);
+    ct = CATransform3DRotate(ct, M_PI_2, 1, 0, 0);
+    [cube addSublayer:[self faceWithTransform:ct]];
+    //add cube face 4
+    ct = CATransform3DMakeTranslation(0, 50, 0);
+    ct = CATransform3DRotate(ct, -M_PI_2, 1, 0, 0);
+    [cube addSublayer:[self faceWithTransform:ct]];
+    //add cube face 5
+    ct = CATransform3DMakeTranslation(-50, 0, 0);
+    ct = CATransform3DRotate(ct, -M_PI_2, 0, 1, 0);
+    [cube addSublayer:[self faceWithTransform:ct]];
+    //add cube face 6
+    ct = CATransform3DMakeTranslation(0, 0, -50);
+    ct = CATransform3DRotate(ct, M_PI, 0, 1, 0);
+    [cube addSublayer:[self faceWithTransform:ct]];
+    
+    //center the cube layer within the container
+    CGSize containerSize = self.containerView.bounds.size;
+    
+    cube.position = CGPointMake(containerSize.width / 2.0, containerSize.height/2.0);
+    //apply the transform and return
+    cube.transform = transform;
+    return cube;
+
+}
+/**代码块说明
+ *单独的圆角
+ */
+-(void)radio{
+
+    //define path parameters
+    CGRect rect = CGRectMake(50, 50, 100, 100);
+    CGSize radii = CGSizeMake(20, 20); // 圆角的 rect
+    //create path
+    UIRectCorner corners = UIRectCornerTopRight | UIRectCornerBottomRight | UIRectCornerBottomLeft;
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:radii];
+    
+    
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.path = path.CGPath;
+    
+}
+
+/**代码块说明
+ *划线
+ */
+-(void)CAShapeLayer:(CALayer *)layer{
+    /* 初始化一个layer */
+    CAShapeLayer *border = [CAShapeLayer layer];
+    
+    
+    /* 虚线的颜色 */
+//    border.strokeColor = RGBFromHexColor(0xfe527a).CGColor;
+    /* 填充虚线内的颜色 */
+    border.fillColor = nil;
+    /* 贝塞尔曲线路径 */
+    border.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(4, 4, 200- 8, 40 - 8) cornerRadius:20].CGPath;
+    /* 虚线宽度 */
+    border.lineWidth = 0.7f;
+    border.lineCap = @"square";
+    /* 虚线的每个点长  和 两个点之间的空隙 */
+    border.lineDashPattern = @[@3];
+    /* 添加到你的控件上 */
+    [layer addSublayer:border];
+
 }
 
 /**代码块说明
@@ -303,7 +444,7 @@
 }
 
 /**代码块说明
- *
+ *绕 Y 轴旋转 75 ）
  */
 -(void)thrDtran{
     
@@ -312,7 +453,7 @@
     
         _3Dtran =  CATransform3DRotate(_3Dtran, M_PI/180 * 75, 0, 1, 0);
 
-    blueLayer.transform = _3Dtran;
+//    blueLayer.transform = _3Dtran;
     
     /**
      *周佳兴
@@ -321,6 +462,11 @@
     
 }
 // #define RADIANS_TO_DEGREES(x) ((x)/M_PI*180.0)
+
+/**
+ *周佳兴
+ *旋转 90 ）
+ */
 -(void)transform{
     CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_4);
     _layerView.transform = transform;
@@ -343,7 +489,7 @@
     blueLayer.borderColor = [UIColor redColor].CGColor;
 }
 -(void)zPosition{
-    blueLayer.zPosition = 1;
+    blueLayer.zPosition = 1; // 让他显示的大一点 但是 只是看起来 显示在前面了 而已 式计算过 图层树中他还是 在原来的 位置上显示的
 }
 -(void)delegate{
     blueLayer.delegate = self;
@@ -418,11 +564,11 @@
      *周佳兴
      *线颜色
      **/
-    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
+    CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
 
     /**
      *周佳兴
-     *形状  椭圆
+     *形状  椭圆  位置
      **/
     CGContextStrokeEllipseInRect(ctx, CGRectMake(6, 16, 50, 50));
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5q3-VM-56j">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5q3-VM-56j">
                                 <rect key="frame" x="67" y="36" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-H4-ZrG">
-                                <rect key="frame" x="8" y="147" width="359" height="372"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-H4-ZrG">
+                                <rect key="frame" x="0.0" y="295" width="375" height="372"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-oQ-HWY">
                                         <rect key="frame" x="15" y="26" width="100" height="100"/>
@@ -119,6 +118,16 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pdo-H4-ZrG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Lj-MX-hFb"/>
+                            <constraint firstItem="pdo-H4-ZrG" firstAttribute="top" secondItem="5q3-VM-56j" secondAttribute="bottom" constant="59" id="D98-hf-bPM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5q3-VM-56j" secondAttribute="trailing" constant="92" id="NE1-53-mu0"/>
+                            <constraint firstItem="pdo-H4-ZrG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SS7-AP-5kT"/>
+                            <constraint firstItem="pdo-H4-ZrG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="295" id="Uxb-Pr-jCw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pdo-H4-ZrG" secondAttribute="bottom" id="ZXk-Fw-4Ex"/>
+                            <constraint firstItem="5q3-VM-56j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="cLZ-Hz-0Zb"/>
+                            <constraint firstItem="5q3-VM-56j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="f84-Fg-yw0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="pdo-H4-ZrG" id="1ZN-9f-1E1"/>

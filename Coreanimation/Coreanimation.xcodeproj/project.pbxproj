@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2FA23CC4183C99EFC5401A16 /* Pods_Coreanimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6F0C382C9AEE536E8DDF41 /* Pods_Coreanimation.framework */; };
+		3F54A3421ED9700400278319 /* CoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A3401ED9700400278319 /* CoreAnimationViewController.m */; };
+		3F54A3431ED9700400278319 /* CoreAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F54A3411ED9700400278319 /* CoreAnimationViewController.xib */; };
 		4288C8241EB4769D004F2B50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4288C8231EB4769D004F2B50 /* main.m */; };
 		4288C8271EB4769D004F2B50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4288C8261EB4769D004F2B50 /* AppDelegate.m */; };
 		4288C82A1EB4769D004F2B50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4288C8291EB4769D004F2B50 /* ViewController.m */; };
@@ -40,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		06490A169BCABAB142DD8305 /* Pods-Coreanimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coreanimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coreanimation/Pods-Coreanimation.release.xcconfig"; sourceTree = "<group>"; };
+		3F54A33F1ED9700400278319 /* CoreAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationViewController.h; sourceTree = "<group>"; };
+		3F54A3401ED9700400278319 /* CoreAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationViewController.m; sourceTree = "<group>"; };
+		3F54A3411ED9700400278319 /* CoreAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoreAnimationViewController.xib; sourceTree = "<group>"; };
 		4288C81F1EB4769D004F2B50 /* Coreanimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coreanimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4288C8231EB4769D004F2B50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4288C8251EB4769D004F2B50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +131,9 @@
 				4288C8301EB4769D004F2B50 /* LaunchScreen.storyboard */,
 				4288C8331EB4769D004F2B50 /* Info.plist */,
 				4288C8221EB4769D004F2B50 /* Supporting Files */,
+				3F54A33F1ED9700400278319 /* CoreAnimationViewController.h */,
+				3F54A3401ED9700400278319 /* CoreAnimationViewController.m */,
+				3F54A3411ED9700400278319 /* CoreAnimationViewController.xib */,
 			);
 			path = Coreanimation;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4288C8321EB4769D004F2B50 /* LaunchScreen.storyboard in Resources */,
+				3F54A3431ED9700400278319 /* CoreAnimationViewController.xib in Resources */,
 				4288C85C1EB87430004F2B50 /* 屏幕快照 2017-04-29 15.49.56.png in Resources */,
 				4288C82F1EB4769D004F2B50 /* Assets.xcassets in Resources */,
 				4288C8561EB47D67004F2B50 /* 屏幕快照 2017-04-29 15.49.561.png in Resources */,
@@ -361,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F54A3421ED9700400278319 /* CoreAnimationViewController.m in Sources */,
 				4288C82A1EB4769D004F2B50 /* ViewController.m in Sources */,
 				4288C8271EB4769D004F2B50 /* AppDelegate.m in Sources */,
 				4288C8241EB4769D004F2B50 /* main.m in Sources */,
