@@ -608,7 +608,7 @@
     
     UIImage *image1 = [UIImage imageNamed:@"时针"];
 
-    UIImage *image2 = [UIImage imageNamed:@"时针"];
+    UIImage *image2 = [UIImage imageNamed:@"时针"];   
 
     UIImage *image3 = [UIImage imageNamed:@"时针"];
 
