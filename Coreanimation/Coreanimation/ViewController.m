@@ -619,7 +619,7 @@
     minuteHand.contents =  (__bridge id)(image2.CGImage);
     secondHand.contents =  (__bridge id)(image3.CGImage);
 
-    _layerView.layer.contentsScale = image.scale;
+    _layerView.layer.contentsScale = image.scale; 
 }
 /**
  * Core Animation是一个复合引擎，它的职责就是尽可能快地组合屏幕上不同的可 视内容，这个内容是被分解成独立的图层，存储在一个叫做图层树的体系之中。
