@@ -598,7 +598,7 @@
 }
 /**代码块说明
  *图层上的图片
- */
+ */ 
 -(void)contentsCGImage{
     
 //    NSURL *url = [NSURL URLWithString:@"http://uploadpic.55.la/upload/temp/2017/05/02/11/56814338588273.png"];
