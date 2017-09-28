@@ -15,7 +15,7 @@
     CALayer *hourHand;
     CALayer *minuteHand;
     CALayer *secondHand;
-
+ 
 }
 @property (weak, nonatomic) IBOutlet UIView *view6;
 @property (weak, nonatomic) IBOutlet UIView *view5;
