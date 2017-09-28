@@ -14,7 +14,7 @@
     CALayer *blueLayer;
     CALayer *hourHand;
     CALayer *minuteHand;
-    CALayer *secondHand;
+     CALayer *secondHand;
  
 }
 @property (weak, nonatomic) IBOutlet UIView *view6;
